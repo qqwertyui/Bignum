@@ -19,7 +19,7 @@ integers of arbitrary length can be used.
 - doctest (if you want to build UTs)
 
 ### 3. Build
-- git clone git@github.com:qqwertyui/Bignum.git ; cd Bignum
+- git clone https://github.com/qqwertyui/Bignum.git ; cd Bignum
 - mkdir build ; cd build
 - cmake .. -G"Unix Makefiles"     # use generator depending on your preferences
 - make                            # as mentioned higher
