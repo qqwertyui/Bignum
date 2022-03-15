@@ -7,9 +7,9 @@ TEST_CASE("Test operations with generated input") {
   SUBCASE("Addition") {
     load_json(input, "add.json");
     for (auto &key : input["testcases"]) {
-      Bignum a{key["input"][0]};
-      Bignum b{key["input"][1]};
-      Bignum c{key["output"]};
+      Bignum a{key["input"][0].get<std::string>()};
+      Bignum b{key["input"][1].get<std::string>()};
+      Bignum c{key["output"].get<std::string>()};
       REQUIRE(a + b == c);
     }
   }
@@ -17,9 +17,9 @@ TEST_CASE("Test operations with generated input") {
   SUBCASE("Subtraction") {
     load_json(input, "sub.json");
     for (auto &key : input["testcases"]) {
-      Bignum a{key["input"][0]};
-      Bignum b{key["input"][1]};
-      Bignum c{key["output"]};
+      Bignum a{key["input"][0].get<std::string>()};
+      Bignum b{key["input"][1].get<std::string>()};
+      Bignum c{key["output"].get<std::string>()};
       REQUIRE(a - b == c);
     }
   }
@@ -27,9 +27,9 @@ TEST_CASE("Test operations with generated input") {
   SUBCASE("Multiplication") {
     load_json(input, "mul.json");
     for (auto &key : input["testcases"]) {
-      Bignum a{key["input"][0]};
-      Bignum b{key["input"][1]};
-      Bignum c{key["output"]};
+      Bignum a{key["input"][0].get<std::string>()};
+      Bignum b{key["input"][1].get<std::string>()};
+      Bignum c{key["output"].get<std::string>()};
       REQUIRE(a * b == c);
     }
   }
@@ -37,9 +37,9 @@ TEST_CASE("Test operations with generated input") {
   SUBCASE("Division") {
     load_json(input, "div.json");
     for (auto &key : input["testcases"]) {
-      Bignum a{key["input"][0]};
-      Bignum b{key["input"][1]};
-      Bignum c{key["output"]};
+      Bignum a{key["input"][0].get<std::string>()};
+      Bignum b{key["input"][1].get<std::string>()};
+      Bignum c{key["output"].get<std::string>()};
       REQUIRE(a / b == c);
     }
   }
